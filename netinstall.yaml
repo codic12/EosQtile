@@ -141,7 +141,8 @@
     - qtile
     - ttf-jetbrains-mono
     - arc-gtk-theme-eos
-- name: "Zen Kernel"
+    - powerline 
+name: "Zen Kernel"
   description: "https://github.com/zen-kernel/zen-kernel"
   hidden: false
   selected: false

@@ -1,3 +1,4 @@
 qtile
 ttf-jetbrains-mono
 arc-gtk-theme-eos
+powerline
