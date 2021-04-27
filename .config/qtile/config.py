@@ -153,23 +153,13 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(),
-                widget.TextBox(font="Cascadia Mono PL",
-                               foreground="#331f66",
-                               text="◢",
-                               fontsize=54,
-                               padding=-5),
+
                 widget.GroupBox(highlight_method='line',
                                 this_screen_border="#a45ee0",
                                 this_current_screen_border="#a45ee0",
                                 active="#ffffff",
                                 inactive="#86768a",
                                 background="#331f66"),
-                widget.TextBox(
-                    font="Cascadia Mono PL",
-                    foreground="#331f66",
-                    text="◤ ",
-                    fontsize=44,
-                    padding=-10),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -179,20 +169,9 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.TextBox(font="Cascadia Mono PL",
-                               foreground="#331f66",
-                               text="◢",
-                               fontsize=54,
-                               padding=-5),
+
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              background="#331f66"),
-                widget.TextBox(
-                    font="Cascadia Mono PL",
-                    foreground="#331f66",
-
-                    text="◤ ",
-                    fontsize=44,
-                    padding=-10),
                 widget.QuickExit()
             ],
             24,
