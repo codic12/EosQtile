@@ -1,4 +1,6 @@
 qtile
-ttf-jetbrains-mono
+ttf-cascadia-code
 arc-gtk-theme-eos
-powerline
+xfce4-terminal
+pcmanfm-gtk3
+picom

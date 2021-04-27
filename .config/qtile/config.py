@@ -142,7 +142,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='CaskaydiaCove Nerd Font Mono',
+    font='Cascadia Mono PL',
     fontsize=16,
     padding=3,
 )
@@ -153,7 +153,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(),
-                widget.TextBox(font="CaskaydiaCove Nerd Font Mono",
+                widget.TextBox(font="Cascadia Mono PL",
                                foreground="#331f66",
                                text="◢",
                                fontsize=54,
@@ -165,7 +165,7 @@ screens = [
                                 inactive="#86768a",
                                 background="#331f66"),
                 widget.TextBox(
-                    font="CaskaydiaCove Nerd Font Mono",
+                    font="Cascadia Mono PL",
                     foreground="#331f66",
                     text="◤ ",
                     fontsize=44,
@@ -179,7 +179,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.TextBox(font="CaskaydiaCove Nerd Font Mono",
+                widget.TextBox(font="Cascadia Mono PL",
                                foreground="#331f66",
                                text="◢",
                                fontsize=54,
@@ -187,7 +187,7 @@ screens = [
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              background="#331f66"),
                 widget.TextBox(
-                    font="CaskaydiaCove Nerd Font Mono",
+                    font="Cascadia Mono PL",
                     foreground="#331f66",
 
                     text="◤ ",
