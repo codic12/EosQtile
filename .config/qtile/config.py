@@ -161,6 +161,7 @@ screens = [
                                 inactive="#86768a",
                                 background="#331f66"),
                 widget.Prompt(),
+                widget.Spacer(width=5),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -169,7 +170,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-
+                widget.Spacer(width=5),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              background="#331f66"),
                 widget.QuickExit()
