@@ -1,3 +1,4 @@
+
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -29,10 +30,10 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+import os
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "xfce4-terminal"
 
 keys = [
     # Switch between windows
@@ -124,8 +125,8 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(margin=4, border_focus='#a45ee0',
-                     border_normal='#531f80'),
+    layout.MonadTall(margin=8, border_focus='#5294e2',
+                     border_normal='#2c5380'),
     #layout.Columns(border_focus_stack='#d75f5f'),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -142,8 +143,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Cascadia Mono PL',
-    fontsize=16,
+    font='Ubuntu Mono',
+    fontsize=18,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -152,14 +153,12 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(),
-
                 widget.GroupBox(highlight_method='line',
-                                this_screen_border="#a45ee0",
-                                this_current_screen_border="#a45ee0",
+                                this_screen_border="#5294e2",
+                                this_current_screen_border="#5294e2",
                                 active="#ffffff",
-                                inactive="#86768a",
-                                background="#331f66"),
+                                inactive="#848e96",
+                                background="#2f343f"),
                 widget.Prompt(),
                 widget.Spacer(width=5),
                 widget.WindowName(),
@@ -169,13 +168,25 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(),
-                widget.Spacer(width=5),
+                widget.CurrentLayoutIcon(scale=0.75),
+                widget.CheckUpdates(
+                    update_interval=1800,
+                    distro="Arch_yay",
+                    display_format="{updates} Updates",
+                    foreground="#ffffff",
+                    mouse_callbacks={
+                        'Button1':
+                        lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
+                    },
+                    background="#2f343f"),
+                widget.Systray(icon_size = 20),
+                widget.Spacer(length=5),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
-                             background="#331f66"),
+                             background="#2f343f"),
                 widget.QuickExit()
             ],
-            24,
+            28,  # height in px
+            background="#404552"  # background color
         ), ),
 ]
 

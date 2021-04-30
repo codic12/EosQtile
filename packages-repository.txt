@@ -1,6 +1,8 @@
 qtile
-ttf-cascadia-code
+ttf-ubuntu-font-family
 arc-gtk-theme-eos
 xfce4-terminal
 pcmanfm-gtk3
 picom
+alsa-utils
+papiru-icon-theme
