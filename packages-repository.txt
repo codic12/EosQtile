@@ -7,4 +7,4 @@ picom
 alsa-utils
 papirus-icon-theme
 pasystray
-
+feh
