@@ -5,4 +5,6 @@ xfce4-terminal
 pcmanfm-gtk3
 picom
 alsa-utils
-papiru-icon-theme
+papirus-icon-theme
+pasystray
+

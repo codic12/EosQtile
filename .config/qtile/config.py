@@ -27,10 +27,16 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-import os
+import os, subprocess
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
+
 
 mod = "mod4"
 terminal = "xfce4-terminal"
@@ -45,6 +51,8 @@ keys = [
         "space",
         lazy.layout.next(),
         desc="Move window focus to other window"),
+
+    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -97,7 +105,7 @@ keys = [
     Key([mod, "shift"], "space", lazy.layout.flip()),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod],
+    Key([mod, "shift"],
         "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
@@ -160,7 +168,7 @@ screens = [
                                 inactive="#848e96",
                                 background="#2f343f"),
                 widget.Prompt(),
-                widget.Spacer(width=5),
+                widget.Spacer(length=5),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
