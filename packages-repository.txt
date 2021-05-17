@@ -8,3 +8,4 @@ alsa-utils
 papirus-icon-theme
 pasystray
 feh
+rofi
