@@ -37,7 +37,6 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
 
-
 mod = "mod4"
 terminal = "xfce4-terminal"
 
