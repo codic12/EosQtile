@@ -1,4 +1,4 @@
-otf-font-awesome
+ttf-nerd-fonts-symbols 
 qtile
 ttf-cascadia-code
 arc-gtk-theme-eos
