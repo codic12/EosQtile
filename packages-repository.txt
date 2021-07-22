@@ -1,5 +1,5 @@
 qtile
-ttf-ubuntu-font-family
+ttf-cascadia-code
 arc-gtk-theme-eos
 xfce4-terminal
 pcmanfm-gtk3

@@ -27,7 +27,7 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 import os, subprocess
@@ -150,25 +150,34 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Ubuntu Mono',
-    fontsize=18,
+    font='Cascadia Mono PL Regular',
+    fontsize=16,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
+# 
+
 screens = [
     Screen(
         top=bar.Bar(
-            [
-                widget.GroupBox(highlight_method='line',
+            [ 
+                widget.GroupBox(
+                    #highlight_method='line', # we don't use this because it looks great but it makes the numbers go up, off center
                                 this_screen_border="#5294e2",
                                 this_current_screen_border="#5294e2",
                                 active="#ffffff",
                                 inactive="#848e96",
                                 background="#2f343f"),
+                widget.TextBox(
+                       text = '',
+                       padding = 0,
+                       fontsize = 28,
+                       foreground='#2f343f'
+                       ),    
                 widget.Prompt(),
                 widget.Spacer(length=5),
-                widget.WindowName(),
+                widget.WindowName(foreground='#99c0de',fmt='缾 {}'),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -188,11 +197,33 @@ screens = [
                     background="#2f343f"),
                 widget.Systray(icon_size = 20),
                 widget.Spacer(length=5),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p',
-                             background="#2f343f"),
-                widget.QuickExit()
+                                widget.TextBox(
+                       text = '',
+                       padding = 0,
+                       fontsize = 28,
+                       foreground='#2f343f'
+                       ),    
+                widget.Clock(format=' %Y-%m-%d %a %I:%M %p',
+                             background="#2f343f",
+                             foreground='#9bd689'),
+                                                widget.TextBox(
+                       text = '',
+                       padding = 0,
+                       fontsize = 20,
+                       foreground='#2f343f',
+                        background='#2f343f'
+                       ),   
+                widget.TextBox(
+                    text='',
+                    mouse_callbacks= {
+                        'Button1':
+                        lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
+                    },
+                    foreground='#e39378'
+                )
+                
             ],
-            28,  # height in px
+            30,  # height in px
             background="#404552"  # background color
         ), ),
 ]
