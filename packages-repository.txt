@@ -1,3 +1,4 @@
+otf-font-awesome
 qtile
 ttf-cascadia-code
 arc-gtk-theme-eos
