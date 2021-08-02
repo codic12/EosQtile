@@ -1,4 +1,4 @@
-ttf-nerd-fonts-symbols 
+ttf-nerd-fonts-symbols
 qtile
 ttf-cascadia-code
 arc-gtk-theme-eos
