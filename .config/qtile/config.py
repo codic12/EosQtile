@@ -177,7 +177,7 @@ screens = [
                        ),    
                 widget.Prompt(),
                 widget.Spacer(length=5),
-                widget.WindowName(foreground='#99c0de',fmt='缾 {}'),
+                widget.WindowName(foreground='#99c0de',fmt='{}'),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
